@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='css/images/icons/covid-19-96.png')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/vendor/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/vendor/select2/select2.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/css/util.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/css/main.css')}}">
+    <title>Deteksi Awal Gejala Covid-19</title>
+  </head>
+
+<body>
+    <div class="container-contact100">
+        <div class="wrap-contact100">
+            <form class="contact100-form validate-form" action="/" method="GET">
+                {% if result == 1 %}
+                    <span class="contact100-form-title">
+                    ANDA TERDETEKSI POSITIF COVID-19
+                    </span>
+
+                {% elif result == 0 %}
+                    <span class="contact100-form-title">
+                    ANDA TERDETEKSI NEGATIF COVID-19 
+                    </span>
+                 {% endif %}
+                <div class="container-contact100-form-btn">
+                    <div class="wrap-contact100-form-btn">
+                        <div class="contact100-form-bgbtn"></div>
+                        <button class="contact100-form-btn">
+                            <span>
+                                Done
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>

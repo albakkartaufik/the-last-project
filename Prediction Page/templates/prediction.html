@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='css/images/icons/covid-19-96.png')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/vendor/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/vendor/select2/select2.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/css/util.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/css/main.css')}}">
+    <title>Deteksi Awal Gejala Covid-19</title>
+</head>
+
+<body>
+
+<div class="container-contact100">
+    <div class ="wrap-contact100">
+        <form class="contact-form validate-form" action="/" method="POST">
+            <span class="contact100-form-title">
+                Deteksi Gejala Awal Covid-19
+            </span>
+           
+            <div class="wrap-input100 input100-select">
+                <span class="label-input100">Model Algoritma</span>
+                <div>
+                    <select class="selection-2 select2-hidden-accessible" name="model" tabindex="-1" aria-hidden="true" required="">
+                        <option value="">Pilih Model Algoritma</option>
+                        <option value="Logistic">Logistic Regression</option>
+                        <option value="KNN">K-Nearest Neighbor</option>
+                        <option value="Dtree">Random Decision Tree</option>
+                        <option value="SVM">Support Vector Machine</option>
+                        <option value="ANN">Artificial Neural Network</option>
+                    </select>
+                        <span class="select2 select2-container select2-container--default select2-container--below
+                    select2-container--focus" dir="ltr" style="width: 187px">
+                            <span class="selection">
+                                <span class="select2-selection select-selection--single" role="combobox" aria-haspopup="true"
+                                aria-expanded="false" tabindex="0" aria-labelledby="select2-service-y0-container">
+                                </span>
+                                <span class="dropdown-wrapper" aria-hidden="true"></span>
+                            </span>
+                        </span>
+                </div>
+                <span class="focus-input100">
+                </span>
+            </div>
+
+            <div class="wrap-input100 input100-select">
+                <span class="label-input100">Jenis Kelamin</span>
+                <div>
+                    <select class="selection-2 select2-hidden-accessible" name="Jenis Kelamin" tabindex="-1" aria-hidden="true">
+                        <option value=""></option>
+                        <option value="1">Pria</option>
+                        <option value="0">Wanita</option>
+                    </select>
+                        <span class="select2 select2-container select2-container--default select2-container--below
+                    select2-container--focus" dir="ltr" style="width: 187px">
+                            <span class="selection">
+                                <span class="select2-selection select-selection--single" role="combobox" aria-haspopup="true"
+                                aria-expanded="false" tabindex="0" aria-labelledby="select2-service-y0-container">
+                                </span>
+                                <span class="dropdown-wrapper" aria-hidden="true"></span>
+                            </span>
+                        </span>
+                </div>
+                <span class="focus-input100">
+                </span>
+            </div>
+
+             <div class="wrap-input100 validate-input" >
+                <span class="label-input100">usia</span>
+                <input class="input100" type="text" placeholder="Masukan Umur Anda" name="usia" id="usia" required>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 input100-select">
+                <span class="label-input100">Apakah Anda Mengalami Demam?</span>
+                <div>
+                    <select class="selection-2 select2-hidden-accessible" name="demam" tabindex="-1" aria-hidden="true">
+                        <option value=""></option>
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option>
+                    </select>
+                        <span class="select2 select2-container select2-container--default select2-container--below
+                    select2-container--focus" dir="ltr" style="width: 187px">
+                            <span class="selection">
+                                <span class="select2-selection select-selection--single" role="combobox" aria-haspopup="true"
+                                aria-expanded="false" tabindex="0" aria-labelledby="select2-service-y0-container">
+                                </span>
+                                <span class="dropdown-wrapper" aria-hidden="true"></span>
+                            </span>
+                        </span>
+                </div>
+                <span class="focus-input100">
+                </span>
+            </div>
+
+            <div class="wrap-input100 input100-select">
+                <span class="label-input100">Apakah Anda Mengalami Batuk?</span>
+                <div>
+                    <select class="selection-2 select2-hidden-accessible" name="batuk" tabindex="-1" aria-hidden="true">
+                        <option value=""></option>
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option>
+                    </select>
+                        <span class="select2 select2-container select2-container--default select2-container--below
+                    select2-container--focus" dir="ltr" style="width: 187px">
+                            <span class="selection">
+                                <span class="select2-selection select-selection--single" role="combobox" aria-haspopup="true"
+                                aria-expanded="false" tabindex="0" aria-labelledby="select2-service-y0-container">
+                                </span>
+                                <span class="dropdown-wrapper" aria-hidden="true"></span>
+                            </span>
+                        </span>
+                </div>
+                <span class="focus-input100">
+                </span>
+            </div>
+
+            <div class="wrap-input100 input100-select">
+                <span class="label-input100">Apakah Anda Mengalami Pilek?</span>
+                <div>
+                    <select class="selection-2 select2-hidden-accessible" name="pilek" tabindex="-1" aria-hidden="true">
+                        <option value=""></option>
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option>
+                    </select>
+                        <span class="select2 select2-container select2-container--default select2-container--below
+                    select2-container--focus" dir="ltr" style="width: 187px">
+                            <span class="selection">
+                                <span class="select2-selection select-selection--single" role="combobox" aria-haspopup="true"
+                                aria-expanded="false" tabindex="0" aria-labelledby="select2-service-y0-container">
+                                </span>
+                                <span class="dropdown-wrapper" aria-hidden="true"></span>
+                            </span>
+                        </span>
+                </div>
+                <span class="focus-input100">
+                </span>
+            </div>
+
+            <div class="wrap-input100 input100-select">
+                <span class="label-input100">Apakah Anda Mengalami Nyeri Otot?</span>
+                <div>
+                    <select class="selection-2 select2-hidden-accessible" name="nyeri" tabindex="-1" aria-hidden="true">
+                        <option value=""></option>
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option>
+                    </select>
+                        <span class="select2 select2-container select2-container--default select2-container--below
+                    select2-container--focus" dir="ltr" style="width: 187px">
+                            <span class="selection">
+                                <span class="select2-selection select-selection--single" role="combobox" aria-haspopup="true"
+                                aria-expanded="false" tabindex="0" aria-labelledby="select2-service-y0-container">
+                                </span>
+                                <span class="dropdown-wrapper" aria-hidden="true"></span>
+                            </span>
+                        </span>
+                </div>
+                <span class="focus-input100">
+                </span>
+            </div>
+
+            <div class="wrap-input100 input100-select">
+                <span class="label-input100">Apakah Anda Mengidap Pneumonia?</span>
+                <div>
+                    <select class="selection-2 select2-hidden-accessible" name="pneumonia" tabindex="-1" aria-hidden="true">
+                        <option value=""></option>
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option>
+                    </select>
+                        <span class="select2 select2-container select2-container--default select2-container--below
+                    select2-container--focus" dir="ltr" style="width: 187px">
+                            <span class="selection">
+                                <span class="select2-selection select-selection--single" role="combobox" aria-haspopup="true"
+                                aria-expanded="false" tabindex="0" aria-labelledby="select2-service-y0-container">
+                                </span>
+                                <span class="dropdown-wrapper" aria-hidden="true"></span>
+                            </span>
+                        </span>
+                </div>
+                <span class="focus-input100">
+                </span>
+            </div>
+
+            <div class="wrap-input100 input100-select">
+                <span class="label-input100">Apakah Anda Mengalami Diare?</span>
+                <div>
+                    <select class="selection-2 select2-hidden-accessible" name="diare" tabindex="-1" aria-hidden="true">
+                        <option value=""></option>
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option>
+                    </select>
+                        <span class="select2 select2-container select2-container--default select2-container--below
+                    select2-container--focus" dir="ltr" style="width: 187px">
+                            <span class="selection">
+                                <span class="select2-selection select-selection--single" role="combobox" aria-haspopup="true"
+                                aria-expanded="false" tabindex="0" aria-labelledby="select2-service-y0-container">
+                                </span>
+                                <span class="dropdown-wrapper" aria-hidden="true"></span>
+                            </span>
+                        </span>
+                </div>
+                <span class="focus-input100">
+                </span>
+            </div>
+            <div class="wrap-input100 input100-select">
+                <span class="label-input100">Apakah Anda Mengidap Infeksi Paru-Paru?</span>
+                <div>
+                    <select class="selection-2 select2-hidden-accessible" name="infeksiparu" tabindex="-1" aria-hidden="true">
+                        <option value=""></option>
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option>
+                    </select>
+                        <span class="select2 select2-container select2-container--default select2-container--below
+                    select2-container--focus" dir="ltr" style="width: 187px">
+                            <span class="selection">
+                                <span class="select2-selection select-selection--single" role="combobox" aria-haspopup="true"
+                                aria-expanded="false" tabindex="0" aria-labelledby="select2-service-y0-container">
+                                </span>
+                                <span class="dropdown-wrapper" aria-hidden="true"></span>
+                            </span>
+                        </span>
+                </div>
+                <span class="focus-input100">
+                </span>
+            </div>
+
+            <div class="wrap-input100 input100-select">
+                <span class="label-input100">Apakah Anda Melakukan Isolasi 1 minggu sebelumnya?</span>
+                <div>
+                    <select class="selection-2 select2-hidden-accessible" name="isolasi" tabindex="-1" aria-hidden="true">
+                        <option value=""></option>
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option>
+                    </select>
+                        <span class="select2 select2-container select2-container--default select2-container--below
+                    select2-container--focus" dir="ltr" style="width: 187px">
+                            <span class="selection">
+                                <span class="select2-selection select-selection--single" role="combobox" aria-haspopup="true"
+                                aria-expanded="false" tabindex="0" aria-labelledby="select2-service-y0-container">
+                                </span>
+                                <span class="dropdown-wrapper" aria-hidden="true"></span>
+                            </span>
+                        </span>
+                </div>
+                <span class="focus-input100">
+                </span>
+            </div>
+
+            <div class="container-contact100-form-btn">
+                <div class="wrap-contact100-form-btn">
+                    <div class="contact100-form-bgbtn"></div>
+                    <button class="contact100-form-btn">
+                        <span>
+                            Prediksi
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="dropDownSelect1"></div>
+<script src="static\css\vendor\jquery\jquery-3.2.1.min.js"></script>
+<script src="static\css\vendor\bootstrap\js\popper.js"></script>
+<script src="static\css\vendor\bootstrap\js\bootstrap.min.js"></script>
+<script src="static\css\vendor\select2\select2.min.js"></script>
+<script>
+    $(".selection-2").select2({
+        minimumResultForSearch:20,
+        dropdownParent: $('#dropDownSelect1')
+        });
+</script>
+<script src="static\css\js\main.js"></script>
+</body>
