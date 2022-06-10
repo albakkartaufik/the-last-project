@@ -37,6 +37,9 @@ def prediction():
         elif model == 'Dtree':
             dtree_model = joblib.load('model-development/covid_predictor2.pkl')
             result_prediction = dtree_model.predict(ex1)
+        elif model == 'SVM':
+            SVM_model = joblib.load('model-development/covid_predictor3.pkl')
+            result_prediction = SVM_model.predict(ex1)    
         return render_template('hasil.html', result=result_prediction,model_selected=model)
 
 if __name__ == '__main__':
