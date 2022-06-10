@@ -18,12 +18,12 @@
             <form class="contact100-form validate-form" action="/" method="GET">
                 {% if result == 1 %}
                     <span class="contact100-form-title">
-                    ANDA TERDETEKSI POSITIF COVID-19
+                    ANDA TERDETEKSI POSITIF COVID-19 dengan {{ model_selected }}
                     </span>
 
                 {% elif result == 0 %}
                     <span class="contact100-form-title">
-                    ANDA TERDETEKSI NEGATIF COVID-19 
+                    ANDA TERDETEKSI NEGATIF COVID-19 dengan {{ model_selected }} 
                     </span>
                  {% endif %}
                 <div class="container-contact100-form-btn">
@@ -31,7 +31,7 @@
                         <div class="contact100-form-bgbtn"></div>
                         <button class="contact100-form-btn">
                             <span>
-                                Done
+                                <a href=" http://127.0.0.1:5000/index" style="text-decoration: none">prediction</a>
                             </span>
                         </button>
                     </div>
