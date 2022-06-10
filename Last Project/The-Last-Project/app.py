@@ -34,13 +34,28 @@ def prediction():
         if model == 'Logistic':
             logit_model = joblib.load('model-development/covid_predictor.pkl')
             result_prediction = logit_model.predict(ex1)
+            probabilities = logit_model.predict_proba(ex1)
+            if probabilities[0][1]> probabilities[0][0]:
+                true_probabilities = probabilities[0][1] * 100
+            else:
+                true_probabilities = probabilities[0][0] * 100
         elif model == 'Dtree':
             dtree_model = joblib.load('model-development/covid_predictor2.pkl')
             result_prediction = dtree_model.predict(ex1)
+            probabilities = dtree_model.predict_proba(ex1)
+            if probabilities[0][1]> probabilities[0][0]:
+                true_probabilities = probabilities[0][1] * 100
+            else:
+                true_probabilities = probabilities[0][0] * 100
         elif model == 'SVM':
             SVM_model = joblib.load('model-development/covid_predictor3.pkl')
-            result_prediction = SVM_model.predict(ex1)    
-        return render_template('hasil.html', result=result_prediction,model_selected=model)
+            result_prediction = SVM_model.predict(ex1)
+            probabilities = SVM_model.predict_proba(ex1)
+            if probabilities[0][1]> probabilities[0][0]:
+                true_probabilities = probabilities[0][1] * 100
+            else:
+                true_probabilities = probabilities[0][0] * 100    
+        return render_template('hasil.html', result=result_prediction,model_selected=model,probabilities=true_probabilities)
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)

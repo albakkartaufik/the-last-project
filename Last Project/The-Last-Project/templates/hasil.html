@@ -18,12 +18,12 @@
             <form class="contact100-form validate-form" action="/" method="GET">
                 {% if result == 1 %}
                     <span class="contact100-form-title">
-                    ANDA TERDETEKSI POSITIF COVID-19 dengan {{ model_selected }}
+                    ANDA {{probabilities}}% TERDETEKSI POSITIF COVID-19 dengan {{ model_selected }} 
                     </span>
 
                 {% elif result == 0 %}
                     <span class="contact100-form-title">
-                    ANDA TERDETEKSI NEGATIF COVID-19 dengan {{ model_selected }} 
+                    ANDA {{probabilities}}% TERDETEKSI NEGATIF COVID-19 dengan {{ model_selected }}
                     </span>
                  {% endif %}
                 <div class="container-contact100-form-btn">
